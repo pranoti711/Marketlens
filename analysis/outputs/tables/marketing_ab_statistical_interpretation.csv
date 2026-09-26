@@ -1,0 +1,12 @@
+Metric,Value
+Ad Conversion Rate %,2.554656
+PSA Conversion Rate %,1.785411
+Observed Difference Percentage Points,0.769245
+Observed Relative Lift %,43.085064
+Z Statistic,7.370078
+Two-Sided P Value,1.705303e-13
+95% CI Lower Percentage Points,0.595090
+95% CI Upper Percentage Points,0.943401
+Interpretation,The observed conversion rates differ under the two-sided two-proportion z-test at the 5% significance level.
+Causal Limitation,The statistical comparison identifies an observed association between test group and conversion outcome; it does not by itself establish causal impact.
+Sample Size Caveat,"The ad and PSA groups are highly imbalanced in sample size, so group size should be considered when interpreting the comparison."

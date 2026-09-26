@@ -1,0 +1,2 @@
+Metric,Flagged Rows,Interpretation
+Total_Conversion greater than Clicks,218,"Retained as a source-definition flag. The dataset is aggregated at ad level, so Total_Conversion is not assumed to be a simple click-level funnel count."

@@ -1,0 +1,1429 @@
+====================================================================================================
+MARKETLENS DATA DICTIONARY
+====================================================================================================
+
+Purpose: Comprehensive documentation of the cleaned datasets prepared for MarketLens analytics and Power BI dashboard development.
+
+Generated: 2026-09-21 23:12:32
+
+Project Root: C:\Users\Pranoti munjankar\OneDrive\Desktop\DA PROJECTS\Marketlens
+
+Cleaned Data Directory: C:\Users\Pranoti munjankar\OneDrive\Desktop\DA PROJECTS\Marketlens\data\cleaned
+
+Important: This report documents the cleaned data layer. It does not modify any CSV files.
+
+====================================================================================================
+DATASET: Global Ads Performance
+====================================================================================================
+
+File: C:\Users\Pranoti munjankar\OneDrive\Desktop\DA PROJECTS\Marketlens\data\cleaned\global_ads_performance_cleaned.csv
+
+DATASET OVERVIEW
+----------------------------------------------------------------------------------------------------
+Rows: 1,800
+Columns: 40
+Source columns: 14
+Derived / analytical columns: 26
+
+Total missing cells: 0
+Duplicate rows: 0
+
+COLUMN INVENTORY
+----------------------------------------------------------------------------------------------------
+No. | Field Name | Origin | Data Type | Non-Null | Missing | Unique
+----------------------------------------------------------------------------------------------------
+  1 | date                                       | Source field           | object       |    1,800 |       0 |     360
+  2 | platform                                   | Source field           | object       |    1,800 |       0 |       3
+  3 | campaign_type                              | Source field           | object       |    1,800 |       0 |       4
+  4 | industry                                   | Source field           | object       |    1,800 |       0 |       5
+  5 | country                                    | Source field           | object       |    1,800 |       0 |       7
+  6 | impressions                                | Source field           | int64        |    1,800 |       0 |   1,790
+  7 | clicks                                     | Source field           | int64        |    1,800 |       0 |   1,616
+  8 | CTR                                        | Source field           | float64      |    1,800 |       0 |     624
+  9 | CPC                                        | Source field           | float64      |    1,800 |       0 |     327
+ 10 | ad_spend                                   | Source field           | float64      |    1,800 |       0 |   1,800
+ 11 | conversions                                | Source field           | int64        |    1,800 |       0 |     518
+ 12 | CPA                                        | Source field           | float64      |    1,800 |       0 |   1,634
+ 13 | revenue                                    | Source field           | float64      |    1,800 |       0 |   1,798
+ 14 | ROAS                                       | Source field           | float64      |    1,800 |       0 |     999
+ 15 | CTR_Calculated                             | Derived field          | float64      |    1,800 |       0 |   1,800
+ 16 | CPC_Calculated                             | Derived field          | float64      |    1,800 |       0 |     430
+ 17 | CPA_Calculated                             | Derived field          | float64      |    1,800 |       0 |   1,799
+ 18 | ROAS_Calculated                            | Derived field          | float64      |    1,800 |       0 |   1,800
+ 19 | CTR_Validation_Difference                  | Derived field          | float64      |    1,800 |       0 |   1,797
+ 20 | CPC_Validation_Difference                  | Derived field          | float64      |    1,800 |       0 |       9
+ 21 | CPA_Validation_Difference                  | Derived field          | float64      |    1,800 |       0 |   1,460
+ 22 | ROAS_Validation_Difference                 | Derived field          | float64      |    1,800 |       0 |   1,800
+ 23 | CTR_%                                      | Derived field          | float64      |    1,800 |       0 |   1,800
+ 24 | CTR_Validation_Flag                        | Derived field          | int64        |    1,800 |       0 |       1
+ 25 | CPC_Validation_Flag                        | Derived field          | int64        |    1,800 |       0 |       1
+ 26 | CPA_Validation_Flag                        | Derived field          | int64        |    1,800 |       0 |       1
+ 27 | ROAS_Validation_Flag                       | Derived field          | int64        |    1,800 |       0 |       1
+ 28 | Clicks_Greater_Than_Impressions_Flag       | Derived field          | int64        |    1,800 |       0 |       1
+ 29 | Conversions_Greater_Than_Clicks_Flag       | Derived field          | int64        |    1,800 |       0 |       1
+ 30 | Negative_Value_Flag                        | Derived field          | int64        |    1,800 |       0 |       1
+ 31 | impressions_IQR_Outlier_Flag               | Derived field          | int64        |    1,800 |       0 |       1
+ 32 | clicks_IQR_Outlier_Flag                    | Derived field          | int64        |    1,800 |       0 |       2
+ 33 | CTR_IQR_Outlier_Flag                       | Derived field          | int64        |    1,800 |       0 |       2
+ 34 | CPC_IQR_Outlier_Flag                       | Derived field          | int64        |    1,800 |       0 |       2
+ 35 | ad_spend_IQR_Outlier_Flag                  | Derived field          | int64        |    1,800 |       0 |       2
+ 36 | conversions_IQR_Outlier_Flag               | Derived field          | int64        |    1,800 |       0 |       2
+ 37 | CPA_IQR_Outlier_Flag                       | Derived field          | int64        |    1,800 |       0 |       2
+ 38 | revenue_IQR_Outlier_Flag                   | Derived field          | int64        |    1,800 |       0 |       2
+ 39 | ROAS_IQR_Outlier_Flag                      | Derived field          | int64        |    1,800 |       0 |       2
+ 40 | Invalid_Date_Flag                          | Derived field          | int64        |    1,800 |       0 |       1
+
+DETAILED FIELD DEFINITIONS
+----------------------------------------------------------------------------------------------------
+
+1. date
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: object
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 360
+Meaning: Date on which the advertising activity was recorded.
+Formula / Definition: Not applicable
+Business / Analytical Use: Time-series analysis, trend analysis and date filtering.
+Power BI Recommendation: USE - Date field for time analysis and slicers.
+Notes: Should be treated as a date rather than text.
+
+2. platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: object
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 3
+Meaning: Advertising platform on which the campaign activity occurred.
+Formula / Definition: Not applicable
+Business / Analytical Use: Compare advertising efficiency across platforms.
+Power BI Recommendation: USE - Main segmentation dimension.
+Notes: Categorical field.
+
+3. campaign_type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: object
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 4
+Meaning: Type or format of advertising campaign.
+Formula / Definition: Not applicable
+Business / Analytical Use: Compare campaign-format performance.
+Power BI Recommendation: USE - Campaign segmentation.
+Notes: Categorical field.
+
+4. industry
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: object
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 5
+Meaning: Industry associated with the advertising campaign.
+Formula / Definition: Not applicable
+Business / Analytical Use: Compare performance across industry segments.
+Power BI Recommendation: USE - Industry segmentation.
+Notes: Categorical field.
+
+5. country
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: object
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 7
+Meaning: Country associated with the advertising activity.
+Formula / Definition: Not applicable
+Business / Analytical Use: Geographic performance analysis.
+Power BI Recommendation: USE - Geographic segmentation and map analysis.
+Notes: Categorical geographic field.
+
+6. impressions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,790
+Meaning: Number of times advertisements were displayed.
+Formula / Definition: Not applicable
+Business / Analytical Use: Measures advertising exposure/reach.
+Power BI Recommendation: USE - KPI and denominator for CTR.
+Notes: Non-negative count.
+
+7. clicks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,616
+Meaning: Number of clicks generated by advertisements.
+Formula / Definition: Not applicable
+Business / Analytical Use: Measures user engagement with advertisements.
+Power BI Recommendation: USE - KPI and numerator for CTR.
+Notes: Non-negative count.
+
+8. CTR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 624
+Meaning: Reported click-through rate.
+Formula / Definition: Reported by source dataset.
+Business / Analytical Use: Measures the percentage of impressions that resulted in clicks.
+Power BI Recommendation: USE - Performance KPI.
+Notes: Validated against calculated CTR.
+
+9. CPC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 327
+Meaning: Cost per click calculated from advertising spend and clicks.
+Formula / Definition: Spent / Clicks
+Business / Analytical Use: Measures click acquisition cost.
+Power BI Recommendation: USE - Efficiency KPI.
+Notes: Undefined when clicks are zero.
+
+10. ad_spend
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,800
+Meaning: Advertising expenditure.
+Formula / Definition: Not applicable
+Business / Analytical Use: Measures advertising investment.
+Power BI Recommendation: USE - Cost KPI.
+Notes: Monetary field.
+
+11. conversions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 518
+Meaning: Number of conversions attributed to advertising activity.
+Formula / Definition: Not applicable
+Business / Analytical Use: Measures desired user actions generated by advertising.
+Power BI Recommendation: USE - Conversion KPI.
+Notes: Non-negative count.
+
+12. CPA
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,634
+Meaning: Reported cost per acquisition/conversion.
+Formula / Definition: Reported by source dataset.
+Business / Analytical Use: Measures acquisition efficiency.
+Power BI Recommendation: USE - Efficiency KPI.
+Notes: Validated against calculated CPA.
+
+13. revenue
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,798
+Meaning: Revenue attributed to advertising activity.
+Formula / Definition: Not applicable
+Business / Analytical Use: Measures financial outcome of advertising.
+Power BI Recommendation: USE - Revenue KPI.
+Notes: Monetary field.
+
+14. ROAS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 999
+Meaning: Reported return on advertising spend.
+Formula / Definition: Reported by source dataset.
+Business / Analytical Use: Measures revenue generated relative to advertising spend.
+Power BI Recommendation: USE - Primary advertising efficiency KPI.
+Notes: Validated against calculated ROAS.
+
+15. CTR_Calculated
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,800
+Meaning: Click-through rate independently calculated from clicks and impressions.
+Formula / Definition: clicks / impressions
+Business / Analytical Use: Independent KPI validation and analytical CTR calculation.
+Power BI Recommendation: USE - Prefer for independently calculated KPI measures where appropriate.
+Notes: Source CTR is preserved separately.
+
+16. CPC_Calculated
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 430
+Meaning: Cost per click independently calculated from advertising spend and clicks.
+Formula / Definition: ad_spend / clicks
+Business / Analytical Use: Independent validation of reported CPC.
+Power BI Recommendation: USE - KPI validation/reference.
+Notes: Returns missing value where clicks are zero.
+
+17. CPA_Calculated
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,799
+Meaning: Cost per acquisition independently calculated from advertising spend and conversions.
+Formula / Definition: ad_spend / conversions
+Business / Analytical Use: Independent validation of reported CPA.
+Power BI Recommendation: USE - KPI validation/reference.
+Notes: Returns missing value where conversions are zero.
+
+18. ROAS_Calculated
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,800
+Meaning: Return on advertising spend independently calculated from revenue and advertising spend.
+Formula / Definition: revenue / ad_spend
+Business / Analytical Use: Independent validation of reported ROAS.
+Power BI Recommendation: USE - KPI calculation/reference.
+Notes: Returns missing value where advertising spend is zero.
+
+19. CTR_Validation_Difference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,797
+Meaning: Absolute difference between reported CTR and calculated CTR.
+Formula / Definition: ABS(CTR - CTR_Calculated)
+Business / Analytical Use: Measures consistency between reported and calculated CTR.
+Power BI Recommendation: FLAG / QA - Usually hidden from executive dashboard.
+Notes: Used for data-quality validation.
+
+20. CPC_Validation_Difference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 9
+Meaning: Absolute difference between reported CPC and calculated CPC.
+Formula / Definition: ABS(CPC - CPC_Calculated)
+Business / Analytical Use: Measures consistency between reported and calculated CPC.
+Power BI Recommendation: FLAG / QA - Usually hidden from executive dashboard.
+Notes: Used for data-quality validation.
+
+21. CPA_Validation_Difference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,460
+Meaning: Absolute difference between reported CPA and calculated CPA.
+Formula / Definition: ABS(CPA - CPA_Calculated)
+Business / Analytical Use: Measures consistency between reported and calculated CPA.
+Power BI Recommendation: FLAG / QA - Usually hidden from executive dashboard.
+Notes: Used for data-quality validation.
+
+22. ROAS_Validation_Difference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,800
+Meaning: Absolute difference between reported ROAS and calculated ROAS.
+Formula / Definition: ABS(ROAS - ROAS_Calculated)
+Business / Analytical Use: Measures consistency between reported and calculated ROAS.
+Power BI Recommendation: FLAG / QA - Usually hidden from executive dashboard.
+Notes: Used for data-quality validation.
+
+23. CTR_%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1,800
+Meaning: CTR represented as a percentage for business reporting.
+Formula / Definition: (clicks / impressions) × 100
+Business / Analytical Use: Dashboard-friendly CTR presentation.
+Power BI Recommendation: USE - KPI display.
+Notes: Formatted as percentage in Power BI.
+
+24. CTR_Validation_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1
+Meaning: Indicates whether reported CTR is within the validation tolerance.
+Formula / Definition: Validation difference compared with predefined tolerance.
+Business / Analytical Use: KPI quality assurance.
+Power BI Recommendation: QA ONLY - Optional quality indicator.
+Notes: Not a performance KPI.
+
+25. CPC_Validation_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1
+Meaning: Indicates whether reported CPC is within the validation tolerance.
+Formula / Definition: Validation difference compared with predefined tolerance.
+Business / Analytical Use: KPI quality assurance.
+Power BI Recommendation: QA ONLY - Optional quality indicator.
+Notes: Not a performance KPI.
+
+26. CPA_Validation_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1
+Meaning: Indicates whether reported CPA is within the validation tolerance.
+Formula / Definition: Validation difference compared with predefined tolerance.
+Business / Analytical Use: KPI quality assurance.
+Power BI Recommendation: QA ONLY - Optional quality indicator.
+Notes: Not a performance KPI.
+
+27. ROAS_Validation_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1
+Meaning: Indicates whether reported ROAS is within the validation tolerance.
+Formula / Definition: Validation difference compared with predefined tolerance.
+Business / Analytical Use: KPI quality assurance.
+Power BI Recommendation: QA ONLY - Optional quality indicator.
+Notes: Not a performance KPI.
+
+28. Clicks_Greater_Than_Impressions_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+29. Conversions_Greater_Than_Clicks_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+30. Negative_Value_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1
+Meaning: Flags records containing negative numeric values.
+Formula / Definition: Any monitored numeric metric < 0
+Business / Analytical Use: Detects invalid negative measurements.
+Power BI Recommendation: QA ONLY.
+Notes: Expected value is zero.
+
+31. impressions_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+32. clicks_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+33. CTR_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+34. CPC_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+35. ad_spend_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+36. conversions_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+37. CPA_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+38. revenue_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+39. ROAS_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+40. Invalid_Date_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,800
+Missing Values: 0
+Unique Values: 1
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+NUMERIC FIELD SUMMARY
+----------------------------------------------------------------------------------------------------
+Field | Minimum | Maximum | Mean | Median
+----------------------------------------------------------------------------------------------------
+impressions                                |    5059.0000 |  199650.0000 |  102919.0189 |  103653.0000
+clicks                                     |      91.0000 |   16660.0000 |    3962.6756 |    3318.0000
+CTR                                        |       0.0089 |       0.0956 |       0.0384 |       0.0355
+CPC                                        |       0.2800 |       3.9500 |       1.5728 |       1.4600
+ad_spend                                   |      58.0000 |   38453.3200 |    6171.5273 |    4393.8600
+conversions                                |       2.0000 |    1151.0000 |     181.5622 |     130.0000
+CPA                                        |       4.8000 |     335.8600 |      46.6090 |      33.3750
+revenue                                    |     142.6900 |  295028.2600 |   30101.8505 |   18362.9650
+ROAS                                       |       0.1300 |      49.0000 |       6.4504 |       4.2950
+CTR_Calculated                             |       0.0089 |       0.0956 |       0.0384 |       0.0355
+CPC_Calculated                             |       0.2800 |       3.9500 |       1.5728 |       1.4600
+CPA_Calculated                             |       4.7989 |     335.8644 |      46.6089 |      33.3739
+ROAS_Calculated                            |       0.1324 |      49.0042 |       6.4502 |       4.2949
+CTR_Validation_Difference                  |       0.0000 |       0.0002 |       0.0000 |       0.0000
+CPC_Validation_Difference                  |      -0.0000 |       0.0000 |      -0.0000 |       0.0000
+CPA_Validation_Difference                  |      -0.0050 |       0.0050 |       0.0000 |       0.0000
+ROAS_Validation_Difference                 |      -0.0050 |       0.0050 |       0.0002 |       0.0003
+CTR_%                                      |       0.8896 |       9.5589 |       3.8417 |       3.5544
+CTR_Validation_Flag                        |       1.0000 |       1.0000 |       1.0000 |       1.0000
+CPC_Validation_Flag                        |       1.0000 |       1.0000 |       1.0000 |       1.0000
+CPA_Validation_Flag                        |       1.0000 |       1.0000 |       1.0000 |       1.0000
+ROAS_Validation_Flag                       |       1.0000 |       1.0000 |       1.0000 |       1.0000
+Clicks_Greater_Than_Impressions_Flag       |       0.0000 |       0.0000 |       0.0000 |       0.0000
+Conversions_Greater_Than_Clicks_Flag       |       0.0000 |       0.0000 |       0.0000 |       0.0000
+Negative_Value_Flag                        |       0.0000 |       0.0000 |       0.0000 |       0.0000
+impressions_IQR_Outlier_Flag               |       0.0000 |       0.0000 |       0.0000 |       0.0000
+clicks_IQR_Outlier_Flag                    |       0.0000 |       1.0000 |       0.0233 |       0.0000
+CTR_IQR_Outlier_Flag                       |       0.0000 |       1.0000 |       0.0067 |       0.0000
+CPC_IQR_Outlier_Flag                       |       0.0000 |       1.0000 |       0.0039 |       0.0000
+ad_spend_IQR_Outlier_Flag                  |       0.0000 |       1.0000 |       0.0500 |       0.0000
+conversions_IQR_Outlier_Flag               |       0.0000 |       1.0000 |       0.0472 |       0.0000
+CPA_IQR_Outlier_Flag                       |       0.0000 |       1.0000 |       0.0778 |       0.0000
+revenue_IQR_Outlier_Flag                   |       0.0000 |       1.0000 |       0.0706 |       0.0000
+ROAS_IQR_Outlier_Flag                      |       0.0000 |       1.0000 |       0.0683 |       0.0000
+Invalid_Date_Flag                          |       0.0000 |       0.0000 |       0.0000 |       0.0000
+
+CATEGORICAL FIELD SUMMARY
+----------------------------------------------------------------------------------------------------
+date: 360 unique values (full list omitted)
+platform: Google Ads, Meta Ads, TikTok Ads
+campaign_type: Display, Search, Shopping, Video
+industry: E-commerce, EdTech, Fintech, Healthcare, SaaS
+country: Australia, Canada, Germany, India, UAE, UK, USA
+
+DATASET-SPECIFIC ANALYTICAL NOTES
+----------------------------------------------------------------------------------------------------
+1. Reported CTR, CPC, CPA and ROAS are preserved from the source.
+2. Independently calculated KPI fields are retained for validation.
+3. IQR outlier flags are retained for investigation; no observations were automatically removed.
+4. CTR should be interpreted consistently: the source CTR is a ratio, while CTR_% is the percentage representation.
+5. For aggregated Power BI reporting, calculate CTR from total clicks divided by total impressions rather than averaging row-level CTR.
+
+====================================================================================================
+DATASET: KAG Conversion Data
+====================================================================================================
+
+File: C:\Users\Pranoti munjankar\OneDrive\Desktop\DA PROJECTS\Marketlens\data\cleaned\KAG_conversion_data_cleaned.csv
+
+DATASET OVERVIEW
+----------------------------------------------------------------------------------------------------
+Rows: 1,143
+Columns: 27
+Source columns: 11
+Derived / analytical columns: 16
+
+Total missing cells: 1,188
+Duplicate rows: 0
+
+COLUMN INVENTORY
+----------------------------------------------------------------------------------------------------
+No. | Field Name | Origin | Data Type | Non-Null | Missing | Unique
+----------------------------------------------------------------------------------------------------
+  1 | ad_id                                      | Source field           | int64        |    1,143 |       0 |   1,143
+  2 | xyz_campaign_id                            | Source field           | int64        |    1,143 |       0 |       3
+  3 | fb_campaign_id                             | Source field           | int64        |    1,143 |       0 |     691
+  4 | age                                        | Source field           | object       |    1,143 |       0 |       4
+  5 | gender                                     | Source field           | object       |    1,143 |       0 |       2
+  6 | interest                                   | Source field           | int64        |    1,143 |       0 |      40
+  7 | Impressions                                | Source field           | int64        |    1,143 |       0 |   1,130
+  8 | Clicks                                     | Source field           | int64        |    1,143 |       0 |     183
+  9 | Spent                                      | Source field           | float64      |    1,143 |       0 |     869
+ 10 | Total_Conversion                           | Source field           | int64        |    1,143 |       0 |      32
+ 11 | Approved_Conversion                        | Source field           | int64        |    1,143 |       0 |      16
+ 12 | CTR_%                                      | Derived field          | float64      |    1,143 |       0 |     936
+ 13 | Click_to_Total_Conversion_%                | Derived field          | float64      |      936 |     207 |     285
+ 14 | Click_to_Approved_Conversion_%             | Derived field          | float64      |      936 |     207 |     202
+ 15 | Total_to_Approved_Conversion_%             | Derived field          | float64      |    1,135 |       8 |      57
+ 16 | CPC                                        | Derived field          | float64      |      936 |     207 |     868
+ 17 | Cost_per_Approved_Conversion               | Derived field          | float64      |      584 |     559 |     502
+ 18 | Total_Conversion_Greater_Than_Clicks_Flag  | Derived field          | int64        |    1,143 |       0 |       2
+ 19 | Approved_Greater_Than_Total_Flag           | Derived field          | int64        |    1,143 |       0 |       1
+ 20 | Negative_Value_Flag                        | Derived field          | int64        |    1,143 |       0 |       1
+ 21 | Impressions_IQR_Outlier_Flag               | Derived field          | int64        |    1,143 |       0 |       2
+ 22 | Clicks_IQR_Outlier_Flag                    | Derived field          | int64        |    1,143 |       0 |       2
+ 23 | Spent_IQR_Outlier_Flag                     | Derived field          | int64        |    1,143 |       0 |       2
+ 24 | Total_Conversion_IQR_Outlier_Flag          | Derived field          | int64        |    1,143 |       0 |       2
+ 25 | Approved_Conversion_IQR_Outlier_Flag       | Derived field          | int64        |    1,143 |       0 |       2
+ 26 | Missing_Value_Flag                         | Derived field          | int64        |    1,143 |       0 |       2
+ 27 | Duplicate_Row_Flag                         | Derived field          | int64        |    1,143 |       0 |       1
+
+DETAILED FIELD DEFINITIONS
+----------------------------------------------------------------------------------------------------
+
+1. ad_id
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 1,143
+Meaning: Identifier for the advertisement record.
+Formula / Definition: Not applicable
+Business / Analytical Use: Record-level identification and traceability.
+Power BI Recommendation: METADATA - Use for detail-level analysis only.
+Notes: Identifier, not a performance measure.
+
+2. xyz_campaign_id
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 3
+Meaning: Campaign identifier used in the source dataset.
+Formula / Definition: Not applicable
+Business / Analytical Use: Campaign-level segmentation.
+Power BI Recommendation: USE - Campaign analysis.
+Notes: Identifier/categorical field.
+
+3. fb_campaign_id
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 691
+Meaning: Facebook campaign identifier from the source dataset.
+Formula / Definition: Not applicable
+Business / Analytical Use: Campaign traceability and segmentation.
+Power BI Recommendation: USE - Campaign identification.
+Notes: Identifier, not continuous numeric data.
+
+4. age
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: object
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 4
+Meaning: Age-group segment associated with the advertisement audience.
+Formula / Definition: Not applicable
+Business / Analytical Use: Age-based audience segmentation.
+Power BI Recommendation: USE - Audience segmentation.
+Notes: Categorical field.
+
+5. gender
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: object
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 2
+Meaning: Gender segment associated with the advertisement audience.
+Formula / Definition: Not applicable
+Business / Analytical Use: Gender-based audience segmentation.
+Power BI Recommendation: USE - Audience segmentation.
+Notes: Categorical field.
+
+6. interest
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 40
+Meaning: Interest category/code associated with the advertisement.
+Formula / Definition: Not applicable
+Business / Analytical Use: Audience-interest segmentation.
+Power BI Recommendation: USE - Segment analysis.
+Notes: Numeric-coded categorical variable; do not treat as continuous.
+
+7. Impressions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 1,130
+Meaning: Number of advertisement impressions.
+Formula / Definition: Not applicable
+Business / Analytical Use: Measures advertising exposure.
+Power BI Recommendation: USE - Exposure KPI.
+Notes: Non-negative count.
+
+8. Clicks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 183
+Meaning: Number of clicks generated by the advertisement.
+Formula / Definition: Not applicable
+Business / Analytical Use: Measures engagement.
+Power BI Recommendation: USE - Engagement KPI.
+Notes: Non-negative count.
+
+9. Spent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: float64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 869
+Meaning: Amount spent on the advertisement.
+Formula / Definition: Not applicable
+Business / Analytical Use: Measures advertising investment.
+Power BI Recommendation: USE - Cost KPI.
+Notes: Monetary field.
+
+10. Total_Conversion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 32
+Meaning: Total conversion count reported at advertisement-record level.
+Formula / Definition: Reported by source dataset.
+Business / Analytical Use: Measures reported conversion activity.
+Power BI Recommendation: USE - Conversion analysis.
+Notes: The dataset contains 218 records where Total_Conversion > Clicks; this is retained as a source-definition/data-quality flag rather than automatically corrected.
+
+11. Approved_Conversion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 16
+Meaning: Number of approved conversions reported by the source.
+Formula / Definition: Reported by source dataset.
+Business / Analytical Use: Measures approved conversion outcomes.
+Power BI Recommendation: USE - Primary conversion-quality KPI.
+Notes: Should not exceed Total_Conversion.
+
+12. CTR_%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 936
+Meaning: CTR represented as a percentage for business reporting.
+Formula / Definition: (clicks / impressions) × 100
+Business / Analytical Use: Dashboard-friendly CTR presentation.
+Power BI Recommendation: USE - KPI display.
+Notes: Formatted as percentage in Power BI.
+
+13. Click_to_Total_Conversion_%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 936
+Missing Values: 207
+Unique Values: 285
+Meaning: Percentage of clicks associated with total conversions.
+Formula / Definition: (Total_Conversion / Clicks) × 100
+Business / Analytical Use: Conversion efficiency analysis.
+Power BI Recommendation: USE - Funnel KPI.
+Notes: Undefined when clicks are zero; retained as blank.
+
+14. Click_to_Approved_Conversion_%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 936
+Missing Values: 207
+Unique Values: 202
+Meaning: Percentage of clicks associated with approved conversions.
+Formula / Definition: (Approved_Conversion / Clicks) × 100
+Business / Analytical Use: Approved conversion efficiency.
+Power BI Recommendation: USE - Funnel KPI.
+Notes: Undefined when clicks are zero; retained as blank.
+
+15. Total_to_Approved_Conversion_%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 1,135
+Missing Values: 8
+Unique Values: 57
+Meaning: Percentage of total conversions that are approved conversions.
+Formula / Definition: (Approved_Conversion / Total_Conversion) × 100
+Business / Analytical Use: Measures conversion approval quality.
+Power BI Recommendation: USE - Conversion-quality KPI.
+Notes: Undefined when Total_Conversion is zero.
+
+16. CPC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 936
+Missing Values: 207
+Unique Values: 868
+Meaning: Cost per click calculated from advertising spend and clicks.
+Formula / Definition: Spent / Clicks
+Business / Analytical Use: Measures click acquisition cost.
+Power BI Recommendation: USE - Efficiency KPI.
+Notes: Undefined when clicks are zero.
+
+17. Cost_per_Approved_Conversion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: float64
+Non-Null Values: 584
+Missing Values: 559
+Unique Values: 502
+Meaning: Advertising cost required per approved conversion.
+Formula / Definition: Spent / Approved_Conversion
+Business / Analytical Use: Measures approved-conversion acquisition efficiency.
+Power BI Recommendation: USE - Efficiency KPI.
+Notes: Undefined when approved conversions are zero.
+
+18. Total_Conversion_Greater_Than_Clicks_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 2
+Meaning: Flags records where reported total conversions exceed reported clicks.
+Formula / Definition: Total_Conversion > Clicks
+Business / Analytical Use: Identifies records requiring source-definition interpretation.
+Power BI Recommendation: QA ONLY - Use for data-quality monitoring.
+Notes: Do not automatically delete these records.
+
+19. Approved_Greater_Than_Total_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 1
+Meaning: Flags records where approved conversions exceed total conversions.
+Formula / Definition: Approved_Conversion > Total_Conversion
+Business / Analytical Use: Logical consistency check.
+Power BI Recommendation: QA ONLY.
+Notes: Expected value is zero.
+
+20. Negative_Value_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 1
+Meaning: Flags records containing negative numeric values.
+Formula / Definition: Any monitored numeric metric < 0
+Business / Analytical Use: Detects invalid negative measurements.
+Power BI Recommendation: QA ONLY.
+Notes: Expected value is zero.
+
+21. Impressions_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+22. Clicks_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+23. Spent_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+24. Total_Conversion_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+25. Approved_Conversion_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 2
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+26. Missing_Value_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 2
+Meaning: Indicates whether a record contains missing values.
+Formula / Definition: One or more fields are missing.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Current Marketing A/B dataset contains no missing values.
+
+27. Duplicate_Row_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 1,143
+Missing Values: 0
+Unique Values: 1
+Meaning: Derived data-quality or validation indicator.
+Formula / Definition: See cleaning/validation logic.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Derived automatically during cleaning.
+
+NUMERIC FIELD SUMMARY
+----------------------------------------------------------------------------------------------------
+Field | Minimum | Maximum | Mean | Median
+----------------------------------------------------------------------------------------------------
+ad_id                                      |  708746.0000 | 1314415.0000 |  987261.1304 | 1121185.0000
+xyz_campaign_id                            |     916.0000 |    1178.0000 |    1067.3823 |    1178.0000
+fb_campaign_id                             |  103916.0000 |  179982.0000 |  133783.9895 |  144549.0000
+interest                                   |       2.0000 |     114.0000 |      32.7664 |      25.0000
+Impressions                                |      87.0000 | 3052003.0000 |  186732.1330 |   51509.0000
+Clicks                                     |       0.0000 |     421.0000 |      33.3902 |       8.0000
+Spent                                      |       0.0000 |     639.9500 |      51.3607 |      12.3700
+Total_Conversion                           |       0.0000 |      60.0000 |       2.8556 |       1.0000
+Approved_Conversion                        |       0.0000 |      21.0000 |       0.9440 |       1.0000
+CTR_%                                      |       0.0000 |       0.1059 |       0.0164 |       0.0160
+Click_to_Total_Conversion_%                |       0.0000 |     400.0000 |      29.5152 |      12.8768
+Click_to_Approved_Conversion_%             |       0.0000 |     200.0000 |      10.9030 |       1.2539
+Total_to_Approved_Conversion_%             |       0.0000 |     100.0000 |      33.9080 |      16.6667
+CPC                                        |       0.1800 |       2.2120 |       1.4993 |       1.4983
+Cost_per_Approved_Conversion               |       0.0000 |     352.4500 |      40.5528 |      22.8470
+Total_Conversion_Greater_Than_Clicks_Flag  |       0.0000 |       1.0000 |       0.1907 |       0.0000
+Approved_Greater_Than_Total_Flag           |       0.0000 |       0.0000 |       0.0000 |       0.0000
+Negative_Value_Flag                        |       0.0000 |       0.0000 |       0.0000 |       0.0000
+Impressions_IQR_Outlier_Flag               |       0.0000 |       1.0000 |       0.1076 |       0.0000
+Clicks_IQR_Outlier_Flag                    |       0.0000 |       1.0000 |       0.1111 |       0.0000
+Spent_IQR_Outlier_Flag                     |       0.0000 |       1.0000 |       0.1094 |       0.0000
+Total_Conversion_IQR_Outlier_Flag          |       0.0000 |       1.0000 |       0.0919 |       0.0000
+Approved_Conversion_IQR_Outlier_Flag       |       0.0000 |       1.0000 |       0.0831 |       0.0000
+Missing_Value_Flag                         |       0.0000 |       1.0000 |       0.5512 |       1.0000
+Duplicate_Row_Flag                         |       0.0000 |       0.0000 |       0.0000 |       0.0000
+
+CATEGORICAL FIELD SUMMARY
+----------------------------------------------------------------------------------------------------
+age: 30-34, 35-39, 40-44, 45-49
+gender: F, M
+
+DATASET-SPECIFIC ANALYTICAL NOTES
+----------------------------------------------------------------------------------------------------
+1. Interest is a numeric-coded categorical variable and should not be interpreted as a continuous measurement.
+2. The cleaned dataset retains records where Total_Conversion exceeds Clicks.
+3. This conversion anomaly is documented and flagged rather than automatically corrected because the source dataset's metric definition is not independently established.
+4. Ratio fields may contain analytical NaN values where the denominator is zero. These are not missing source observations.
+5. For Power BI, calculate aggregate conversion rates from aggregated numerators and denominators rather than averaging row-level rates.
+
+====================================================================================================
+DATASET: Marketing A/B Testing
+====================================================================================================
+
+File: C:\Users\Pranoti munjankar\OneDrive\Desktop\DA PROJECTS\Marketlens\data\cleaned\marketing_AB_cleaned.csv
+
+DATASET OVERVIEW
+----------------------------------------------------------------------------------------------------
+Rows: 588,101
+Columns: 15
+Source columns: 7
+Derived / analytical columns: 8
+
+Total missing cells: 0
+Duplicate rows: 0
+
+COLUMN INVENTORY
+----------------------------------------------------------------------------------------------------
+No. | Field Name | Origin | Data Type | Non-Null | Missing | Unique
+----------------------------------------------------------------------------------------------------
+  1 | Unnamed: 0                                 | Source metadata        | int64        |  588,101 |       0 | 588,101
+  2 | user id                                    | Source field           | int64        |  588,101 |       0 | 588,101
+  3 | test group                                 | Source field           | object       |  588,101 |       0 |       2
+  4 | converted                                  | Source field           | bool         |  588,101 |       0 |       2
+  5 | total ads                                  | Source field           | int64        |  588,101 |       0 |     807
+  6 | most ads day                               | Source field           | object       |  588,101 |       0 |       7
+  7 | most ads hour                              | Source field           | int64        |  588,101 |       0 |      24
+  8 | Index_Metadata_Flag                        | Derived field          | int64        |  588,101 |       0 |       1
+  9 | Negative_Total_Ads_Flag                    | Derived field          | int64        |  588,101 |       0 |       1
+ 10 | Invalid_Conversion_Value_Flag              | Derived field          | int64        |  588,101 |       0 |       1
+ 11 | Ad_Exposure_Level                          | Derived field          | object       |  588,101 |       0 |       4
+ 12 | total ads_IQR_Outlier_Flag                 | Derived field          | int64        |  588,101 |       0 |       2
+ 13 | Duplicate_User_ID_Flag                     | Derived field          | int64        |  588,101 |       0 |       1
+ 14 | Missing_Value_Flag                         | Derived field          | int64        |  588,101 |       0 |       1
+ 15 | Data_Quality_Flag                          | Derived field          | int64        |  588,101 |       0 |       1
+
+DETAILED FIELD DEFINITIONS
+----------------------------------------------------------------------------------------------------
+
+1. Unnamed: 0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source metadata
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 588,101
+Meaning: Index-like metadata column retained from the source dataset.
+Formula / Definition: Not applicable
+Business / Analytical Use: Source traceability only.
+Power BI Recommendation: DO NOT USE - Metadata only.
+Notes: Do not use as an analytical feature, KPI, grouping field or relationship key.
+
+2. user id
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 588,101
+Meaning: Unique identifier for an individual user.
+Formula / Definition: Not applicable
+Business / Analytical Use: User-level identification and experiment analysis.
+Power BI Recommendation: METADATA - Useful for distinct-user counting.
+Notes: Do not sum this field.
+
+3. test group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: object
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 2
+Meaning: Experiment group assigned to the user: advertising group or public-service-announcement control group.
+Formula / Definition: Not applicable
+Business / Analytical Use: Primary A/B test segmentation variable.
+Power BI Recommendation: USE - Main experiment dimension.
+Notes: Categorical field.
+
+4. converted
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: bool
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 2
+Meaning: Indicates whether the user converted.
+Formula / Definition: Not applicable
+Business / Analytical Use: Primary experiment outcome variable.
+Power BI Recommendation: USE - Conversion KPI.
+Notes: Boolean outcome.
+
+5. total ads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 807
+Meaning: Total number of advertisements shown to the user.
+Formula / Definition: Not applicable
+Business / Analytical Use: Measures advertising exposure.
+Power BI Recommendation: USE - Exposure analysis.
+Notes: Highly right-skewed exposure variable; IQR outliers are flagged, not deleted.
+
+6. most ads day
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: object
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 7
+Meaning: Day of the week on which the user received the highest number of advertisements.
+Formula / Definition: Not applicable
+Business / Analytical Use: Day-of-week exposure analysis.
+Power BI Recommendation: USE - Time-based segmentation.
+Notes: Categorical time field.
+
+7. most ads hour
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Source field
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 24
+Meaning: Hour of the day during which the user received the highest number of advertisements.
+Formula / Definition: Not applicable
+Business / Analytical Use: Hourly advertising exposure analysis.
+Power BI Recommendation: USE - Time-of-day analysis.
+Notes: Treat as a categorical/time dimension.
+
+8. Index_Metadata_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 1
+Meaning: Indicates that the original index-like column is metadata rather than an analytical variable.
+Formula / Definition: Based on source index structure.
+Business / Analytical Use: Documents source metadata.
+Power BI Recommendation: DO NOT USE - Documentation only.
+Notes: Supports transparency of the cleaned dataset.
+
+9. Negative_Total_Ads_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 1
+Meaning: Flags users with a negative total advertisement exposure count.
+Formula / Definition: total ads < 0
+Business / Analytical Use: Logical data-quality validation.
+Power BI Recommendation: QA ONLY.
+Notes: Expected value is zero.
+
+10. Invalid_Conversion_Value_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 1
+Meaning: Flags conversion values outside the expected binary outcome.
+Formula / Definition: converted not in {False, True}
+Business / Analytical Use: Experiment outcome validation.
+Power BI Recommendation: QA ONLY.
+Notes: Expected value is zero.
+
+11. Ad_Exposure_Level
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: object
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 4
+Meaning: Categorical classification of user advertising exposure.
+Formula / Definition: Exposure bands derived from total ads.
+Business / Analytical Use: Compare conversion behaviour across exposure levels.
+Power BI Recommendation: USE - Exposure segmentation.
+Notes: Useful for descriptive analysis; does not by itself establish causality.
+
+12. total ads_IQR_Outlier_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 2
+Meaning: Flags unusually high or low advertisement exposure using the IQR rule.
+Formula / Definition: Value outside Q1 - 1.5×IQR or Q3 + 1.5×IQR
+Business / Analytical Use: Outlier identification.
+Power BI Recommendation: QA / optional analysis.
+Notes: Outliers are flagged rather than removed.
+
+13. Duplicate_User_ID_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 1
+Meaning: Flags repeated user identifiers.
+Formula / Definition: User ID appears more than once.
+Business / Analytical Use: Experiment-level uniqueness validation.
+Power BI Recommendation: QA ONLY.
+Notes: Current cleaned dataset contains no duplicate user IDs.
+
+14. Missing_Value_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 1
+Meaning: Indicates whether a record contains missing values.
+Formula / Definition: One or more fields are missing.
+Business / Analytical Use: Data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Current Marketing A/B dataset contains no missing values.
+
+15. Data_Quality_Flag
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Origin / Role: Derived field
+Data Type: int64
+Non-Null Values: 588,101
+Missing Values: 0
+Unique Values: 1
+Meaning: Combined indicator for selected data-quality issues.
+Formula / Definition: Combination of relevant quality checks.
+Business / Analytical Use: Overall record-level data-quality monitoring.
+Power BI Recommendation: QA ONLY.
+Notes: Not a business performance metric.
+
+NUMERIC FIELD SUMMARY
+----------------------------------------------------------------------------------------------------
+Field | Minimum | Maximum | Mean | Median
+----------------------------------------------------------------------------------------------------
+Unnamed: 0                                 |       0.0000 |  588100.0000 |  294050.0000 |  294050.0000
+user id                                    |  900000.0000 | 1654483.0000 | 1310692.2158 | 1313725.0000
+total ads                                  |       1.0000 |    2065.0000 |      24.8209 |      13.0000
+most ads hour                              |       0.0000 |      23.0000 |      14.4691 |      14.0000
+Index_Metadata_Flag                        |       1.0000 |       1.0000 |       1.0000 |       1.0000
+Negative_Total_Ads_Flag                    |       0.0000 |       0.0000 |       0.0000 |       0.0000
+Invalid_Conversion_Value_Flag              |       0.0000 |       0.0000 |       0.0000 |       0.0000
+total ads_IQR_Outlier_Flag                 |       0.0000 |       1.0000 |       0.0885 |       0.0000
+Duplicate_User_ID_Flag                     |       0.0000 |       0.0000 |       0.0000 |       0.0000
+Missing_Value_Flag                         |       0.0000 |       0.0000 |       0.0000 |       0.0000
+Data_Quality_Flag                          |       1.0000 |       1.0000 |       1.0000 |       1.0000
+
+CATEGORICAL FIELD SUMMARY
+----------------------------------------------------------------------------------------------------
+test group: ad, psa
+converted: False, True
+most ads day: Friday, Monday, Saturday, Sunday, Thursday, Tuesday, Wednesday
+Ad_Exposure_Level: High Exposure, Low Exposure, Moderate Exposure, Very High Exposure
+
+DATASET-SPECIFIC ANALYTICAL NOTES
+----------------------------------------------------------------------------------------------------
+1. 'Unnamed: 0' is retained for source traceability but should not be used as an analytical feature.
+2. 'user id' is an identifier and should be counted distinctly.
+3. 'test group' is the primary A/B experiment dimension.
+4. 'converted' is the primary experiment outcome.
+5. High-exposure users identified through the IQR rule are flagged but not deleted.
+6. Statistical significance should not automatically be interpreted as causal proof without considering experimental design and other possible sources of bias.
+
+====================================================================================================
+POWER BI DATA MODELING GUIDANCE
+====================================================================================================
+
+The cleaned datasets are prepared for dashboard development.
+
+Recommended treatment of fields:
+
+USE:
+• Business dimensions such as platform, campaign type, industry, country, age, gender, test group and exposure level.
+• Core metrics such as impressions, clicks, spend, conversions, revenue and approved conversions.
+• Derived KPI fields where they represent meaningful business metrics.
+
+CALCULATE IN POWER BI WHEN POSSIBLE:
+• CTR = Total Clicks / Total Impressions
+• CPC = Total Spend / Total Clicks
+• CPA = Total Spend / Total Conversions
+• ROAS = Total Revenue / Total Spend
+
+WHY:
+Aggregated ratios should generally be calculated from aggregated numerators and denominators rather than averaged from row-level ratios.
+
+QA / HIDDEN FROM MAIN DASHBOARD:
+• Validation difference fields
+• Validation flags
+• IQR outlier flags
+• Negative-value flags
+• Duplicate flags
+• Missing-value flags
+
+DO NOT USE AS ANALYTICAL FEATURES:
+• Marketing A/B 'Unnamed: 0' index metadata
+
+IDENTIFIER FIELDS:
+Use IDs for traceability or DISTINCTCOUNT where appropriate; do not sum identifier values.
+
+====================================================================================================
+DATA QUALITY AND CLEANING PRINCIPLES
+====================================================================================================
+
+1. RAW DATA PRESERVATION
+The original CSV files in data/raw are preserved unchanged.
+
+2. CLEANED DATA LAYER
+The data/cleaned directory contains one cleaned dataset per source dataset. Analytical and quality fields were added without deleting the original source columns.
+
+3. OUTLIER HANDLING
+Outliers are identified using the IQR rule and flagged for investigation. They are not automatically removed because statistical unusualness does not necessarily indicate invalid data.
+
+4. KPI VALIDATION
+Reported advertising KPIs are independently recalculated where mathematically possible. Validation differences and flags are retained for transparency.
+
+5. DIVISION-BY-ZERO HANDLING
+Calculated ratios with a zero denominator are represented as missing analytical values rather than being incorrectly forced to zero.
+
+6. SOURCE-DEFINITION ANOMALIES
+The KAG dataset contains records where Total_Conversion exceeds Clicks. These records are retained and explicitly flagged because the exact source metric definition is not independently established.
+
+7. TRACEABILITY
+Source fields are retained in the cleaned datasets so that calculated metrics and analytical transformations can be traced back to the original observations.
+
+====================================================================================================
+END OF MARKETLENS DATA DICTIONARY
+====================================================================================================

@@ -1,0 +1,3 @@
+Group,Source_Group,Sample_Size,Conversions,Non_Conversions,Conversion_Rate
+Control,psa,23524,420,23104,0.01785410644448223
+Treatment,ad,564577,14423,550154,0.025546559636683747

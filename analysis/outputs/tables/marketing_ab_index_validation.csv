@@ -1,0 +1,5 @@
+Property,Value
+Numeric,True
+Unique,True
+Monotonic Increasing,True
+Interpretation,Index-like metadata column; not used as an analytical feature.

@@ -1,0 +1,5 @@
+Variable 1,Variable 2,Correlation
+conversions,revenue,0.8310815824250409
+clicks,conversions,0.8161074047781902
+clicks,ad_spend,0.7270143861448339
+impressions,clicks,0.7242155152877626

@@ -1,0 +1,524 @@
+MARKETLENS
+Comprehensive Marketing Analytics & Research Report
+Generated from three marketing datasets.
+
+
+
+==========================================================================================
+1. DATASET INVENTORY
+==========================================================================================
+               Dataset   Rows  Columns  Missing Cells  Duplicate Rows
+Global Ads Performance   1800       18              0               0
+   KAG Conversion Data   1143       11              0               0
+ Marketing A/B Testing 588101        7              0               0
+
+
+==========================================================================================
+2. GLOBAL ADS PERFORMANCE - DATA QUALITY
+==========================================================================================
+        Metric  Value
+          Rows   1800
+       Columns     14
+ Missing Cells      0
+Duplicate Rows      0
+
+
+==========================================================================================
+3. GLOBAL ADS PERFORMANCE - IQR OUTLIER ANALYSIS
+==========================================================================================
+   Variable  Outlier Count  Outlier Percentage   Lower Bound   Upper Bound
+impressions              0            0.000000 -88335.375000 293753.625000
+     clicks             42            2.333333  -4247.000000  11553.000000
+        CTR             12            0.666667     -0.011200      0.086400
+        CPC              7            0.388889     -0.700000      3.700000
+   ad_spend             90            5.000000  -7767.276250  18189.693750
+conversions             85            4.722222   -230.875000    542.125000
+        CPA            140            7.777778    -34.712500    111.727500
+    revenue            127            7.055556 -40255.683750  86494.826250
+       ROAS            123            6.833333     -6.893750     17.276250
+
+
+==========================================================================================
+4. GLOBAL ADS PERFORMANCE - STRONG CORRELATIONS
+==========================================================================================
+ Variable 1  Variable 2  Correlation
+conversions     revenue     0.831082
+     clicks conversions     0.816107
+     clicks    ad_spend     0.727014
+impressions      clicks     0.724216
+
+
+==========================================================================================
+5. GLOBAL ADS PERFORMANCE - KPI VALIDATION
+==========================================================================================
+ KPI  Reported Mean  Calculated Mean  Max Abs Difference  Rows Within Tolerance  Rows Compared  Match Percentage
+ CTR       0.038427         0.038417            0.000177                   1800           1800        100.000000
+ CPC       1.572756         1.572756            0.000000                   1800           1800        100.000000
+ CPA      46.608961        46.608914            0.005000                   1800           1800        100.000000
+ROAS       6.450367         6.450201            0.004995                   1800           1800        100.000000
+
+KPI validation note:
+CTR is validated on the same decimal scale as the source CTR field using Clicks / Impressions. Percentage versions of CTR are used separately for business reporting.
+
+
+==========================================================================================
+6. GLOBAL ADS PERFORMANCE - OVERALL KPIs
+==========================================================================================
+           Metric            Value
+Total Impressions 185254234.000000
+     Total Clicks   7132816.000000
+   Total Ad Spend  11108749.090000
+Total Conversions    326812.000000
+    Total Revenue  54183330.810000
+            CTR %         3.850285
+              CPC         1.557414
+              CPA        33.991252
+             ROAS         4.877537
+
+
+==========================================================================================
+7. GLOBAL ADS PERFORMANCE - PLATFORM PERFORMANCE
+==========================================================================================
+  platform  Impressions  Clicks       Ad_Spend  Conversions         Revenue    CTR_%      CPC       CPA     ROAS
+Google Ads     73801150 2936149 6349268.910000       131098 22033744.950000 3.978460 2.162448 48.431470 3.470281
+  Meta Ads     64403494 1596736 2106061.670000        73262 11926045.790000 2.479269 1.318979 28.746986 5.662724
+TikTok Ads     47049590 2599931 2653418.510000       122452 20223540.070000 5.525938 1.020573 21.669050 7.621693
+
+
+==========================================================================================
+8. GLOBAL ADS PERFORMANCE - CAMPAIGN PERFORMANCE
+==========================================================================================
+campaign_type  Impressions  Clicks       Ad_Spend  Conversions         Revenue    CTR_%      CPC       CPA     ROAS
+      Display     43487104 1638396 2644735.120000        76869 12798903.170000 3.767545 1.614222 34.405744 4.839389
+       Search     47544475 1898227 2868006.850000        90641 15218470.850000 3.992529 1.510887 31.641386 5.306288
+     Shopping     46474038 1785310 2799548.640000        80074 12824695.600000 3.841521 1.568102 34.962018 4.580987
+        Video     47748617 1810883 2796458.480000        79228 13341261.190000 3.792535 1.544251 35.296341 4.770770
+
+
+==========================================================================================
+9. GLOBAL ADS PERFORMANCE - INDUSTRY PERFORMANCE
+==========================================================================================
+  industry  Impressions  Clicks       Ad_Spend  Conversions         Revenue    CTR_%      CPC       CPA     ROAS
+E-commerce     33800712 1280139 1923987.080000        57486  9637279.690000 3.787314 1.502952 33.468794 5.009015
+    EdTech     39833845 1502152 2296978.520000        67257 11549934.430000 3.771044 1.529125 34.152260 5.028316
+   Fintech     36966664 1412347 2271537.730000        65121 10173311.230000 3.820596 1.608343 34.881800 4.478601
+Healthcare     36619145 1387123 2258683.920000        65687 10930814.040000 3.787972 1.628323 34.385555 4.839462
+      SaaS     38033868 1551055 2357561.840000        71261 11891991.420000 4.078089 1.519973 33.083480 5.044191
+
+
+==========================================================================================
+10. GLOBAL ADS PERFORMANCE - COUNTRY PERFORMANCE
+==========================================================================================
+  country  Impressions  Clicks       Ad_Spend  Conversions        Revenue    CTR_%      CPC       CPA     ROAS
+Australia     23801500  960925 1586264.940000        45869 7921847.840000 4.037246 1.650769 34.582505 4.994026
+   Canada     27401283 1034804 1643262.540000        46243 7867323.120000 3.776480 1.587994 35.535379 4.787624
+  Germany     26118806  994571 1551062.170000        44768 7694838.610000 3.807873 1.559529 34.646671 4.961012
+    India     26553737 1015783 1438741.760000        46767 7909606.260000 3.825386 1.416387 30.764038 5.497586
+      UAE     26781852 1056222 1614677.330000        48345 7939594.410000 3.943797 1.528729 33.399055 4.917140
+       UK     26931459 1006651 1547153.480000        46842 7659544.290000 3.737826 1.536931 33.029193 4.950733
+      USA     27665597 1063860 1727586.870000        47978 7190576.280000 3.845426 1.623886 36.007897 4.162208
+
+
+==========================================================================================
+11. GLOBAL ADS PERFORMANCE - LOGICAL VALIDATION
+==========================================================================================
+                     Validation  Count
+Clicks greater than Impressions      0
+Conversions greater than Clicks      0
+           Negative Impressions      0
+                Negative Clicks      0
+              Negative Ad Spend      0
+           Negative Conversions      0
+               Negative Revenue      0
+Global Ads data-quality note:
+Global Ads CTR validation uses the same decimal scale as the source field: Clicks / Impressions. Percentage-scale CTR is used separately for business reporting.
+
+
+==========================================================================================
+12. KAG CONVERSION DATA - DATA QUALITY
+==========================================================================================
+        Metric  Value
+          Rows   1143
+       Columns     11
+ Missing Cells      0
+Duplicate Rows      0
+
+
+==========================================================================================
+13. KAG CONVERSION DATA - IQR OUTLIER ANALYSIS
+==========================================================================================
+           Variable  Outlier Count  Outlier Percentage    Lower Bound   Upper Bound
+        Impressions            123           10.761155 -316394.750000 544667.250000
+             Clicks            127           11.111111     -53.750000     92.250000
+              Spent            125           10.936133     -86.337500    147.842500
+   Total_Conversion            105            9.186352      -2.000000      6.000000
+Approved_Conversion             95            8.311461      -1.500000      2.500000
+
+
+==========================================================================================
+14. KAG CONVERSION DATA - STRONG CORRELATIONS
+==========================================================================================
+      Variable 1          Variable 2  Correlation
+          Clicks               Spent     0.992906
+     Impressions               Spent     0.970386
+     Impressions              Clicks     0.948514
+Total_Conversion Approved_Conversion     0.864034
+     Impressions    Total_Conversion     0.812838
+           Spent    Total_Conversion     0.725379
+
+
+==========================================================================================
+15. KAG CONVERSION DATA - OVERALL FUNNEL
+==========================================================================================
+                        Metric            Value
+             Total Impressions 213434828.000000
+                  Total Clicks     38165.000000
+              Total Conversion      3264.000000
+           Approved Conversion      1079.000000
+                   Total Spend     58705.229958
+    Impression-to-Click Rate %         0.017881
+   Click-to-Total Conversion %         8.552339
+Click-to-Approved Conversion %         2.827198
+Total-to-Approved Conversion %        33.057598
+  Cost per Approved Conversion        54.407071
+
+
+==========================================================================================
+16. KAG CONVERSION DATA - CAMPAIGN PERFORMANCE
+==========================================================================================
+xyz_campaign_id  Records  Impressions  Clicks        Spend  Total_Conversion  Approved_Conversion    CTR_%  Approved Conversion Rate %      CPC  Cost per Approved
+           1178      625    204823716   36068 55662.149959              2669                  872 0.017609                    2.417656 1.543256          63.832741
+            916       54       482925     113   149.710001                58                   24 0.023399                   21.238938 1.324867           6.237917
+            936      464      8128187    1984  2893.369999               537                  183 0.024409                    9.223790 1.458352          15.810765
+
+
+==========================================================================================
+17. KAG CONVERSION DATA - AGE PERFORMANCE
+==========================================================================================
+  age  Records  Impressions  Clicks        Spend  Total_Conversion  Approved_Conversion    CTR_%  Approved Conversion Rate %      CPC  Cost per Approved
+30-34      426     67993019    9483 15252.399986              1431                  494 0.013947                    5.209322 1.608394          30.875304
+35-39      248     42104644    7094 11112.429994               626                  207 0.016848                    2.917959 1.566455          53.683237
+40-44      210     39604307    7736 11589.729981               523                  170 0.019533                    2.197518 1.498155          68.174882
+45-49      259     63732858   13852 20750.669997               684                  208 0.021734                    1.501588 1.498027          99.762837
+
+
+==========================================================================================
+18. KAG CONVERSION DATA - GENDER PERFORMANCE
+==========================================================================================
+gender  Records  Impressions  Clicks        Spend  Total_Conversion  Approved_Conversion    CTR_%  Approved Conversion Rate %      CPC  Cost per Approved
+     F      551    114862847   23878 34502.619963              1644                  495 0.020788                    2.073038 1.444954          69.702263
+     M      592     98571981   14287 24202.609995              1620                  584 0.014494                    4.087632 1.694030          41.442825
+
+
+==========================================================================================
+19. KAG CONVERSION DATA - INTEREST PERFORMANCE
+==========================================================================================
+interest  Records  Impressions  Clicks       Spend  Total_Conversion  Approved_Conversion    CTR_%  Approved Conversion Rate %      CPC  Cost per Approved
+      10       85     17989844    3317 5086.379995               269                   91 0.018438                    2.743443 1.533428          55.894286
+     100        6      2023690     395  574.309992                38                    9 0.019519                    2.278481 1.453949          63.812221
+     101        7      2960453     524  757.689998                71                   25 0.017700                    4.770992 1.445973          30.307600
+     102        7      1160953     150  215.069999                14                    7 0.012920                    4.666667 1.433800          30.724286
+     103        5      1921053     333  479.130005                21                    5 0.017334                    1.501502 1.438829          95.826001
+     104        5      1412110     265  387.919999                43                    8 0.018766                    3.018868 1.463849          48.490000
+     105        7      2656351     453  647.799993                32                    6 0.017053                    1.324503 1.430022         107.966665
+     106        5      1592431     332  482.150004                20                    5 0.020849                    1.506024 1.452259          96.430001
+     107        8      4482111     639  923.179993                65                   20 0.014257                    3.129890 1.444726          46.159000
+     108        7      2763404     402  586.200004                35                    7 0.014547                    1.741294 1.458209          83.742858
+     109        6      2980365     572  815.820001                38                    8 0.019192                    1.398601 1.426259         101.977500
+     110        8      2434719     365  521.350005                36                    9 0.014991                    2.465753 1.428356          57.927778
+     111        6      1490896     260  370.649998                30                   10 0.017439                    3.846154 1.425577          37.065000
+     112        7      2324572     339  483.799999                53                   15 0.014583                    4.424779 1.427139          32.253333
+     113        6      1830565     233  342.830000                25                    7 0.012728                    3.004292 1.471373          48.975714
+     114        5      1066164     191  282.619998                12                    4 0.017915                    2.094241 1.479686          70.655000
+      15       51     10745856    1609 2597.259995               195                   63 0.014973                    3.915475 1.614208          41.226349
+      16      140     31809524    5144 8084.909990               411                  141 0.016171                    2.741058 1.571717          57.339787
+      18       43      8646488    1524 2425.070001                85                   33 0.017626                    2.165354 1.591253          73.486970
+      19       32      6083217    1188 1940.359993                97                   33 0.019529                    2.777778 1.633300          58.798788
+       2       25      1727646     311  503.450005                40                   19 0.018001                    6.109325 1.618810          26.497369
+      20       49      6899907    1234 1960.770001               129                   47 0.017884                    3.808752 1.588955          41.718511
+      21       36      2833321     512  824.209999                70                   27 0.018071                    5.273438 1.609785          30.526296
+      22       33      3965401     717 1039.859998                50                   12 0.018081                    1.673640 1.450293          86.655000
+      23       23      1836368     375  595.650001                29                    7 0.020421                    1.866667 1.588400          85.092857
+      24       24      2256874     419  670.059999                40                   15 0.018566                    3.579952 1.599189          44.670667
+      25       26      5251719    1066 1603.859994                78                   19 0.020298                    1.782364 1.504559          84.413684
+      26       41      4868639    1113 1591.769995                75                   23 0.022861                    2.066487 1.430162          69.207391
+      27       60     16352527    3409 5176.169992               240                   54 0.020847                    1.584042 1.518384          95.855000
+      28       51     10959830    2025 3205.850004               146                   42 0.018477                    2.074074 1.583136          76.329762
+      29       77     18768653    3315 5045.190008               306                  132 0.017662                    3.981900 1.521928          38.221136
+      30       25      2190783     389  616.630003                43                   12 0.017756                    3.084833 1.585167          51.385834
+      31       25      1075312     195  299.099999                33                   16 0.018134                    8.205128 1.533846          18.693750
+      32       33      6455261    1138 1970.530003                76                   35 0.017629                    3.075571 1.731573          56.300857
+      36       21       922928     128  205.740000                28                   10 0.013869                    7.812500 1.607344          20.574000
+      63       46      8365640    1675 2484.060002               101                   34 0.020022                    2.029851 1.483021          73.060588
+      64       48      5085460     989 1486.129996                84                   27 0.019448                    2.730030 1.502659          55.041852
+      65       19      1737547     372  542.010001                33                   19 0.021409                    5.107527 1.457016          28.526842
+      66       11       893407     138  230.760000                14                    4 0.015446                    2.898551 1.672174          57.690000
+       7       24      2612839     410  648.929999                59                   19 0.015692                    4.634146 1.582756          34.154210
+
+
+==========================================================================================
+20. KAG CONVERSION DATA - LOGICAL VALIDATION
+==========================================================================================
+                                       Validation  Count
+             Total_Conversion greater than Clicks    218
+Approved_Conversion greater than Total_Conversion      0
+                Rows with negative numeric values      0
+
+
+==========================================================================================
+21. KAG CONVERSION DATA - SOURCE DEFINITION FLAGS
+==========================================================================================
+                              Metric  Flagged Rows                                                                                                                                           Interpretation
+Total_Conversion greater than Clicks           218 Retained as a source-definition flag. The dataset is aggregated at ad level, so Total_Conversion is not assumed to be a simple click-level funnel count.
+
+
+==========================================================================================
+22. MARKETING A/B TESTING - DATA QUALITY
+==========================================================================================
+        Metric  Value
+          Rows 588101
+       Columns      7
+ Missing Cells      0
+Duplicate Rows      0
+
+
+==========================================================================================
+23. MARKETING A/B TESTING - IQR OUTLIER ANALYSIS
+==========================================================================================
+ Variable  Outlier Count  Outlier Percentage  Lower Bound  Upper Bound
+total ads          52057            8.851711   -30.500000    61.500000
+
+
+==========================================================================================
+24. MARKETING A/B TESTING - STRONG CORRELATIONS
+==========================================================================================
+No records available.
+
+
+==========================================================================================
+25. MARKETING A/B TESTING - GROUP SUMMARY
+==========================================================================================
+test group  Users  Conversions  Total_Ads  Average Ads per User  Conversion Rate %
+        ad 564577        14423   14014701             24.823365           2.554656
+       psa  23524          420     582481             24.761138           1.785411
+
+
+==========================================================================================
+26. MARKETING A/B TESTING - STATISTICAL COMPARISON
+==========================================================================================
+Comparison  Ad Users  PSA Users  Ad Conversions  PSA Conversions  Ad Conversion Rate %  PSA Conversion Rate %  Absolute Difference Percentage Points  Relative Lift %  Z Statistic Two-Sided P Value  95% CI Lower Percentage Points  95% CI Upper Percentage Points
+ ad vs psa    564577      23524           14423              420              2.554656               1.785411                               0.769245        43.085064     7.370078      1.705303e-13                         0.59509                        0.943401
+
+
+==========================================================================================
+27. MARKETING A/B TESTING - NUMERIC STATISTICAL RESULTS
+==========================================================================================
+Comparison  Ad Users  PSA Users  Ad Conversions  PSA Conversions  Ad Conversion Rate  PSA Conversion Rate  Absolute Difference  Relative Lift %    Z Statistic  Two-Sided P Value   95% CI Lower   95% CI Upper
+ ad vs psa    564577      23524           14423              420      0.025546559637       0.017854106444       0.007692453192  43.085064022226 7.370078126545     0.000000000000 0.005950900430 0.009434005954
+
+
+==========================================================================================
+28. MARKETING A/B TESTING - STATISTICAL INTERPRETATION
+==========================================================================================
+                               Metric                                                                                                                                                   Value
+                 Ad Conversion Rate %                                                                                                                                                2.554656
+                PSA Conversion Rate %                                                                                                                                                1.785411
+Observed Difference Percentage Points                                                                                                                                                0.769245
+             Observed Relative Lift %                                                                                                                                               43.085064
+                          Z Statistic                                                                                                                                                7.370078
+                    Two-Sided P Value                                                                                                                                            1.705303e-13
+       95% CI Lower Percentage Points                                                                                                                                                0.595090
+       95% CI Upper Percentage Points                                                                                                                                                0.943401
+                       Interpretation                                            The observed conversion rates differ under the two-sided two-proportion z-test at the 5% significance level.
+                    Causal Limitation The statistical comparison identifies an observed association between test group and conversion outcome; it does not by itself establish causal impact.
+                   Sample Size Caveat                        The ad and PSA groups are highly imbalanced in sample size, so group size should be considered when interpreting the comparison.
+
+
+==========================================================================================
+29. MARKETING A/B TESTING - DAY PERFORMANCE
+==========================================================================================
+test group most ads day  Users  Total_Ads  Conversions  Conversion Rate %  Average Ads per User
+        ad       Friday  88805    2369546         1995           2.246495             26.682574
+        ad       Monday  83571    2121848         2778           3.324120             25.389764
+        ad     Saturday  78802    1980043         1679           2.130657             25.126812
+        ad       Sunday  82332    2006360         2027           2.461983             24.369140
+        ad     Thursday  79077    1839933         1711           2.163714             23.267613
+        ad      Tuesday  74572    1792031         2270           3.044038             24.030883
+        ad    Wednesday  77418    1904940         1963           2.535586             24.605906
+       psa       Friday   3803      94950           62           1.630292             24.967131
+       psa       Monday   3502      83582           79           2.255854             23.866933
+       psa     Saturday   2858      80048           40           1.399580             28.008397
+       psa       Sunday   3059      77493           63           2.059497             25.332788
+       psa     Thursday   3905     104240           79           2.023047             26.693982
+       psa      Tuesday   2907      61690           42           1.444788             21.221190
+       psa    Wednesday   3490      80478           55           1.575931             23.059599
+
+
+==========================================================================================
+30. MARKETING A/B TESTING - HOUR PERFORMANCE
+==========================================================================================
+test group  most ads hour  Users  Total_Ads  Conversions  Conversion Rate %  Average Ads per User
+        ad              0   5309     120682          102           1.921266             22.731588
+        ad              1   4615     116307           62           1.343445             25.201950
+        ad              2   5152     127282           39           0.756988             24.705357
+        ad              3   2590      57776           27           1.042471             22.307336
+        ad              4    694      23380           11           1.585014             33.688761
+        ad              5    742      32645           16           2.156334             43.995957
+        ad              6   1985      83487           46           2.317380             42.058942
+        ad              7   6168     192539          114           1.848249             31.215791
+        ad              8  16968     407747          337           1.986091             24.030351
+        ad              9  29802     700615          582           1.952889             23.508993
+        ad             10  37454     944888          818           2.184012             25.227960
+        ad             11  44149    1102657          992           2.246937             24.975809
+        ad             12  45238    1183507         1092           2.413900             26.161789
+        ad             13  45485    1164947         1140           2.506321             25.611674
+        ad             14  43779    1064130         1251           2.857534             24.306859
+        ad             15  42855    1081442         1279           2.984483             25.234908
+        ad             16  35963     804324         1111           3.089286             22.365320
+        ad             17  33605     817456          959           2.853742             24.325428
+        ad             18  31052     792464          853           2.747005             25.520546
+        ad             19  29169     742621          782           2.680928             25.459255
+        ad             20  27846     734643          843           3.027365             26.382353
+        ad             21  28895     738810          843           2.917460             25.568784
+        ad             22  25515     585350          675           2.645503             22.941407
+        ad             23  19547     395002          449           2.297028             20.207807
+       psa              0    227       5422            0           0.000000             23.885463
+       psa              1    187       4607            0           0.000000             24.636364
+       psa              2    181       4817            0           0.000000             26.613260
+       psa              3     89       3120            1           1.123596             35.056180
+       psa              4     28        744            0           0.000000             26.571429
+       psa              5     23        746            0           0.000000             32.434783
+       psa              6     83       3045            0           0.000000             36.686747
+       psa              7    237       7396            2           0.843882             31.206751
+       psa              8    659      16000            7           1.062215             24.279211
+       psa              9   1202      27571           13           1.081531             22.937604
+       psa             10   1485      38389           20           1.346801             25.851178
+       psa             11   2061      48089           30           1.455604             23.332848
+       psa             12   2060      51749           35           1.699029             25.120874
+       psa             13   2170      54728           36           1.658986             25.220276
+       psa             14   1869      44456           30           1.605136             23.785982
+       psa             15   1828      51690           46           2.516411             28.276805
+       psa             16   1604      35993           45           2.805486             22.439526
+       psa             17   1383      31031           28           2.024584             22.437455
+       psa             18   1271      32503           32           2.517703             25.572777
+       psa             19   1183      32034           29           2.451395             27.078614
+       psa             20   1077      28373           19           1.764160             26.344475
+       psa             21   1081      27249           24           2.220167             25.207216
+       psa             22    917      20424           15           1.635769             22.272628
+       psa             23    619      12305            8           1.292407             19.878837
+
+
+==========================================================================================
+31. MARKETING A/B TESTING - EXPOSURE ANALYSIS
+==========================================================================================
+test group  Users  Total_Ads  Average_Ads_per_User  Median_Ads_per_User  Maximum_Ads_per_User
+        ad 564577   14014701             24.823365            13.000000                  2065
+       psa  23524     582481             24.761138            12.000000                   907
+
+
+==========================================================================================
+32. MARKETING A/B TESTING - INDEX VALIDATION
+==========================================================================================
+            Property                                                          Value
+             Numeric                                                           True
+              Unique                                                           True
+Monotonic Increasing                                                           True
+      Interpretation Index-like metadata column; not used as an analytical feature.
+
+
+==========================================================================================
+33. MARKETING A/B TESTING - LOGICAL VALIDATION
+==========================================================================================
+               Validation  Count
+       Negative total ads      0
+Distinct converted values      2
+       Duplicate user IDs      0
+
+
+==========================================================================================
+34. METHODOLOGY AND INTERPRETATION NOTES
+==========================================================================================
+MarketLens applies a structured analytical workflow across
+three marketing datasets.
+
+The workflow includes:
+
+1. Structural data-quality assessment.
+2. Missing-value and duplicate-row checks.
+3. Numeric-type validation.
+4. IQR-based outlier detection.
+5. Strong Pearson correlation screening.
+6. Marketing KPI recalculation and validation.
+7. Funnel analysis.
+8. Platform, campaign, industry, country and audience
+   segmentation.
+9. Marketing A/B statistical comparison.
+10. Two-proportion z-test.
+11. 95% confidence interval estimation.
+12. Business-oriented interpretation.
+
+Outliers are identified for investigation and are NOT
+automatically removed.
+
+Correlation indicates statistical association and does not
+establish causation.
+
+The A/B test compares observed conversion rates between
+the ad and PSA groups using a two-sided two-proportion
+z-test. Statistical significance should not be interpreted
+as proof of causal impact without considering the study
+design and possible confounding factors.
+
+For the KAG dataset, the occurrence of Total_Conversion
+greater than Clicks is retained as a source-definition flag.
+The dataset is aggregated at ad level, so the fields should
+not automatically be interpreted as a simple click-level
+funnel.
+
+For the Marketing A/B dataset, "total ads" represents ad
+exposure and is treated as an exposure variable rather than
+as an outcome.
+
+For Global Ads, CTR validation is performed using the
+source field's decimal representation. Business-facing
+CTR percentages are calculated separately by multiplying
+Clicks / Impressions by 100.
+
+
+==========================================================================================
+35. MARKETLENS PROJECT STATUS
+==========================================================================================
+MarketLens analysis completed successfully.
+
+Completed analytical components:
+
+- Dataset inventory
+- Data-quality assessment
+- Missing-value checks
+- Duplicate checks
+- Numeric validation
+- IQR outlier detection
+- Correlation analysis
+- Global Ads KPI validation
+- Platform analysis
+- Campaign analysis
+- Industry analysis
+- Country analysis
+- KAG funnel analysis
+- KAG campaign analysis
+- KAG audience segmentation
+- Marketing A/B group comparison
+- Two-proportion z-test
+- 95% confidence interval
+- Day-of-week analysis
+- Hour-of-day analysis
+- Ad exposure analysis
+- Logical validation
+- Research methodology documentation
+
+The current analytical stage does not automatically remove
+outliers or claim causal relationships from observational
+associations.
+
+The next project stage is the documented cleaned-data layer
+followed by the business-facing dashboard.

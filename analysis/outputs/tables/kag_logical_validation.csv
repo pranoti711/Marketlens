@@ -1,0 +1,4 @@
+Validation,Count
+Total_Conversion greater than Clicks,218
+Approved_Conversion greater than Total_Conversion,0
+Rows with negative numeric values,0

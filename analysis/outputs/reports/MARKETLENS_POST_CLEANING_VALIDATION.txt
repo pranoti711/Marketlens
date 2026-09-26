@@ -1,0 +1,321 @@
+MARKETLENS
+POST-CLEANING VALIDATION REPORT
+==========================================================================================
+Purpose: Validate the analytical cleaned-data layer before Power BI dashboard development.
+Raw data remains unchanged.
+Outliers are evaluated as flags rather than automatically deleted.
+
+==========================================================================================
+1. GLOBAL ADS PERFORMANCE — POST-CLEANING VALIDATION
+==========================================================================================
+
+------------------------------------------------------------------------------------------
+1.1 RAW VS CLEANED STRUCTURE
+------------------------------------------------------------------------------------------
+Raw rows: 1,800
+Cleaned rows: 1,800
+Raw columns: 14
+Cleaned columns: 40
+Row count preserved: YES
+
+------------------------------------------------------------------------------------------
+1.2 ORIGINAL SOURCE COLUMNS
+------------------------------------------------------------------------------------------
+All 14 original source columns are present.
+
+------------------------------------------------------------------------------------------
+1.3 ORIGINAL VALUE PRESERVATION
+------------------------------------------------------------------------------------------
+date: MATCH
+platform: MATCH
+campaign_type: MATCH
+industry: MATCH
+country: MATCH
+impressions: MATCH
+clicks: MATCH
+CTR: MATCH
+CPC: MATCH
+ad_spend: MATCH
+conversions: MATCH
+CPA: MATCH
+revenue: MATCH
+ROAS: MATCH
+
+------------------------------------------------------------------------------------------
+1.4 NEW ANALYTICAL COLUMNS
+------------------------------------------------------------------------------------------
+- CTR_Calculated
+- CPC_Calculated
+- CPA_Calculated
+- ROAS_Calculated
+- CTR_Validation_Difference
+- CPC_Validation_Difference
+- CPA_Validation_Difference
+- ROAS_Validation_Difference
+- CTR_%
+- CTR_Validation_Flag
+- CPC_Validation_Flag
+- CPA_Validation_Flag
+- ROAS_Validation_Flag
+- Clicks_Greater_Than_Impressions_Flag
+- Conversions_Greater_Than_Clicks_Flag
+- Negative_Value_Flag
+- impressions_IQR_Outlier_Flag
+- clicks_IQR_Outlier_Flag
+- CTR_IQR_Outlier_Flag
+- CPC_IQR_Outlier_Flag
+- ad_spend_IQR_Outlier_Flag
+- conversions_IQR_Outlier_Flag
+- CPA_IQR_Outlier_Flag
+- revenue_IQR_Outlier_Flag
+- ROAS_IQR_Outlier_Flag
+- Invalid_Date_Flag
+Number of new analytical columns: 26
+
+------------------------------------------------------------------------------------------
+1.5 MISSING VALUES
+------------------------------------------------------------------------------------------
+Raw missing cells: 0
+Cleaned missing cells: 0
+
+------------------------------------------------------------------------------------------
+1.6 LOGICAL QUALITY FLAGS
+------------------------------------------------------------------------------------------
+Clicks_Greater_Than_Impressions_Flag: 0 flagged rows
+Conversions_Greater_Than_Clicks_Flag: 0 flagged rows
+Negative_Value_Flag: 0 flagged rows
+Invalid_Date_Flag: 0 flagged rows
+
+------------------------------------------------------------------------------------------
+1.7 IQR OUTLIER FLAGS
+------------------------------------------------------------------------------------------
+impressions_IQR_Outlier_Flag: 0 flagged rows
+clicks_IQR_Outlier_Flag: 42 flagged rows
+CTR_IQR_Outlier_Flag: 12 flagged rows
+CPC_IQR_Outlier_Flag: 7 flagged rows
+ad_spend_IQR_Outlier_Flag: 90 flagged rows
+conversions_IQR_Outlier_Flag: 85 flagged rows
+CPA_IQR_Outlier_Flag: 140 flagged rows
+revenue_IQR_Outlier_Flag: 127 flagged rows
+ROAS_IQR_Outlier_Flag: 123 flagged rows
+
+------------------------------------------------------------------------------------------
+1.8 GLOBAL ADS VALIDATION RESULT
+------------------------------------------------------------------------------------------
+STATUS: PASSED
+Original observations and source values were preserved.
+
+==========================================================================================
+2. KAG CONVERSION DATA — POST-CLEANING VALIDATION
+==========================================================================================
+
+------------------------------------------------------------------------------------------
+2.1 RAW VS CLEANED STRUCTURE
+------------------------------------------------------------------------------------------
+Raw rows: 1,143
+Cleaned rows: 1,143
+Raw columns: 11
+Cleaned columns: 27
+Row count preserved: YES
+
+------------------------------------------------------------------------------------------
+2.2 ORIGINAL SOURCE COLUMNS
+------------------------------------------------------------------------------------------
+All 11 original source columns are present.
+
+------------------------------------------------------------------------------------------
+2.3 ORIGINAL VALUE PRESERVATION
+------------------------------------------------------------------------------------------
+ad_id: MATCH
+xyz_campaign_id: MATCH
+fb_campaign_id: MATCH
+age: MATCH
+gender: MATCH
+interest: MATCH
+Impressions: MATCH
+Clicks: MATCH
+Spent: MATCH
+Total_Conversion: MATCH
+Approved_Conversion: MATCH
+
+------------------------------------------------------------------------------------------
+2.4 NEW ANALYTICAL COLUMNS
+------------------------------------------------------------------------------------------
+- CTR_%
+- Click_to_Total_Conversion_%
+- Click_to_Approved_Conversion_%
+- Total_to_Approved_Conversion_%
+- CPC
+- Cost_per_Approved_Conversion
+- Total_Conversion_Greater_Than_Clicks_Flag
+- Approved_Greater_Than_Total_Flag
+- Negative_Value_Flag
+- Impressions_IQR_Outlier_Flag
+- Clicks_IQR_Outlier_Flag
+- Spent_IQR_Outlier_Flag
+- Total_Conversion_IQR_Outlier_Flag
+- Approved_Conversion_IQR_Outlier_Flag
+- Missing_Value_Flag
+- Duplicate_Row_Flag
+Number of new analytical columns: 16
+
+------------------------------------------------------------------------------------------
+2.5 MISSING VALUES INVESTIGATION
+------------------------------------------------------------------------------------------
+Raw missing cells: 0
+Cleaned missing cells: 1,188
+
+Missing values by cleaned column:
+  Cost_per_Approved_Conversion: 559
+  Click_to_Total_Conversion_%: 207
+  Click_to_Approved_Conversion_%: 207
+  CPC: 207
+  Total_to_Approved_Conversion_%: 8
+
+Interpretation:
+The KAG raw dataset contained no missing source values.
+Any missing values introduced during cleaning are expected to come from calculated rate fields where the denominator is zero.
+These analytical NaN values are retained rather than artificially replacing them with zero.
+
+------------------------------------------------------------------------------------------
+2.6 SOURCE-DEFINITION VALIDATION
+------------------------------------------------------------------------------------------
+Raw records where Total_Conversion > Clicks: 218
+Cleaned records flagged: 218
+Result: source-definition anomaly retained and flagged.
+Approved_Conversion > Total_Conversion: 0 flagged rows
+
+------------------------------------------------------------------------------------------
+2.7 NEGATIVE VALUES
+------------------------------------------------------------------------------------------
+Negative-value flagged rows: 0
+
+------------------------------------------------------------------------------------------
+2.8 IQR OUTLIER FLAGS
+------------------------------------------------------------------------------------------
+Impressions_IQR_Outlier_Flag: 123 flagged rows
+Clicks_IQR_Outlier_Flag: 127 flagged rows
+Spent_IQR_Outlier_Flag: 125 flagged rows
+Total_Conversion_IQR_Outlier_Flag: 105 flagged rows
+Approved_Conversion_IQR_Outlier_Flag: 95 flagged rows
+
+------------------------------------------------------------------------------------------
+2.9 KAG VALIDATION RESULT
+------------------------------------------------------------------------------------------
+STATUS: PASSED WITH DOCUMENTED ANALYTICAL NaN VALUES
+Original observations and source values were preserved.
+The additional missing cells originate from calculated metrics and are not raw-data missingness.
+
+==========================================================================================
+3. MARKETING A/B TESTING — POST-CLEANING VALIDATION
+==========================================================================================
+
+------------------------------------------------------------------------------------------
+3.1 RAW VS CLEANED STRUCTURE
+------------------------------------------------------------------------------------------
+Raw rows: 588,101
+Cleaned rows: 588,101
+Raw columns: 7
+Cleaned columns: 15
+Row count preserved: YES
+
+------------------------------------------------------------------------------------------
+3.2 ORIGINAL SOURCE COLUMNS
+------------------------------------------------------------------------------------------
+All 7 original source columns are present.
+
+------------------------------------------------------------------------------------------
+3.3 ORIGINAL VALUE PRESERVATION
+------------------------------------------------------------------------------------------
+Unnamed: 0: MATCH
+user id: MATCH
+test group: MATCH
+converted: MATCH
+total ads: MATCH
+most ads day: MATCH
+most ads hour: MATCH
+
+------------------------------------------------------------------------------------------
+3.4 NEW ANALYTICAL COLUMNS
+------------------------------------------------------------------------------------------
+- Index_Metadata_Flag
+- Negative_Total_Ads_Flag
+- Invalid_Conversion_Value_Flag
+- Ad_Exposure_Level
+- total ads_IQR_Outlier_Flag
+- Duplicate_User_ID_Flag
+- Missing_Value_Flag
+- Data_Quality_Flag
+Number of new analytical columns: 8
+
+------------------------------------------------------------------------------------------
+3.5 MISSING VALUES
+------------------------------------------------------------------------------------------
+Raw missing cells: 0
+Cleaned missing cells: 0
+
+------------------------------------------------------------------------------------------
+3.6 CONVERSION VALIDATION
+------------------------------------------------------------------------------------------
+Distinct converted values: [False, True]
+Invalid conversion values: 0
+
+------------------------------------------------------------------------------------------
+3.7 EXPOSURE VALIDATION
+------------------------------------------------------------------------------------------
+Negative total ads: 0
+Minimum total ads: 1
+Median total ads: 13.00
+Maximum total ads: 2,065
+
+------------------------------------------------------------------------------------------
+3.8 DUPLICATE USER VALIDATION
+------------------------------------------------------------------------------------------
+Duplicate user IDs: 0
+
+------------------------------------------------------------------------------------------
+3.9 INDEX-LIKE METADATA
+------------------------------------------------------------------------------------------
+Unnamed: 0 is retained as source metadata.
+It should NOT be used as an analytical feature in Power BI.
+
+------------------------------------------------------------------------------------------
+3.10 IQR OUTLIER VALIDATION
+------------------------------------------------------------------------------------------
+Total ads IQR outliers flagged: 52,057
+Outliers were flagged rather than deleted.
+
+------------------------------------------------------------------------------------------
+3.11 MARKETING A/B VALIDATION RESULT
+------------------------------------------------------------------------------------------
+STATUS: PASSED
+Original observations and source values were preserved.
+
+==========================================================================================
+4. MARKETLENS — OVERALL POST-CLEANING CONCLUSION
+==========================================================================================
+The three cleaned analytical datasets were generated without modifying the original raw CSV files.
+
+Global Ads Performance:
+1,800 observations retained.
+Original source values preserved.
+Analytical KPI calculations and quality flags added.
+IQR outliers flagged rather than deleted.
+
+KAG Conversion Data:
+1,143 observations retained.
+Original source values preserved.
+The Total_Conversion > Clicks condition was retained as a documented source-definition issue.
+Missing values in calculated metrics are treated as undefined ratios rather than forced zeros.
+
+Marketing A/B Testing:
+588,101 observations retained.
+Original source values preserved.
+Total ad exposure outliers were flagged rather than deleted.
+The index-like Unnamed: 0 field is retained as metadata but should not be used as an analytical feature.
+
+OVERALL STATUS:
+CLEANED DATA LAYER VALIDATED FOR DASHBOARD PREPARATION
+
+Recommended next stage:
+Cleaned Data → Data Dictionary → Power BI Data Model → Dashboard
